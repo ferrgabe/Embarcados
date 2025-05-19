@@ -8,10 +8,10 @@ router.post(
   '/',
   [
     body('ON').isBoolean().withMessage('O campo ON deve ser booleano.'),
-    body('RED').isInt({ min: 0, max: 255 }).withMessage('RED deve ser um inteiro entre 0 e 255.'),
-    body('GREEN').isInt({ min: 0, max: 255 }).withMessage('GREEN deve ser um inteiro entre 0 e 255.'),
-    body('BLUE').isInt({ min: 0, max: 255 }).withMessage('BLUE deve ser um inteiro entre 0 e 255.'),
-    body('BEHAVIOR').isString().withMessage('BEHAVIOR deve ser uma string.')
+    body('RED').isBoolean().withMessage('O campo RED deve ser booleano.'),
+    body('GREEN').isBoolean().withMessage('O campo GREEN deve ser booleano.'),
+    body('BLUE').isBoolean().withMessage('O campo BLUE deve ser booleano.'),
+    body('BEHAVIOR').isInt({ min: 0, max: 5 }).withMessage('BLUE deve ser um inteiro entre 0 e 5.'),
   ],
   async (req, res) => {
     const errors = validationResult(req);
